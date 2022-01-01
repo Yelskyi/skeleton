@@ -1,12 +1,12 @@
 from flask_restful import Resource, reqparse
 from flask import request
 
-from application import database
+from application.models import users
 
 
 class UserResource(Resource):
     def get(self):
-        data = database.Users.query.all()
+        data = users.Users.query.all()
         print(data)
         return "Users"
 

@@ -1,8 +1,7 @@
 from flask import Flask
 
-from .views import hello
 from config import config_obj
-from application.database import db
+from .manage import db
 from application import api
 
 
@@ -17,5 +16,4 @@ def not_found(error):
 
 db.init_app(app)
 
-app.register_blueprint(hello.mod, url_prefix="/hello")
 api.api.init_app(app)
